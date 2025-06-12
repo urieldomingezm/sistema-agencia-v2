@@ -1,21 +1,13 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatDividerModule } from '@angular/material/divider';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [
     CommonModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatIconModule,
-    MatMenuModule,
-    MatDividerModule
+    RouterModule
   ],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
@@ -25,7 +17,11 @@ export class HeaderComponent {
   
   title = 'Sistema Agencia';
   
-  toggleMenu(): void {
-    this.menuToggle.emit();
-  }
+  menuItems = [
+    { path: '/', icon: 'bi-house', label: 'Inicio' },
+    { path: '/clientes', icon: 'bi-people', label: 'Clientes' },
+    { path: '/servicios', icon: 'bi-briefcase', label: 'Servicios' },
+    { path: '/reportes', icon: 'bi-bar-chart', label: 'Reportes' },
+    { path: '/configuracion', icon: 'bi-gear', label: 'Configuración' }
+  ];
 }

@@ -4,7 +4,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 
-RUN npm install @angular/material@19 @angular/cdk@19 @angular/animations --save
+RUN npm install bootstrap@5.3.2 @popperjs/core --save
 COPY . .
 RUN npm run build -- --configuration production
 

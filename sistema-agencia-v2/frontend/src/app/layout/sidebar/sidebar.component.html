@@ -1,8 +1,11 @@
 <div class="sidebar-container">
-  <mat-nav-list>
-    <a mat-list-item *ngFor="let item of menuItems" [routerLink]="item.path" routerLinkActive="active-link">
-      <mat-icon matListItemIcon>{{item.icon}}</mat-icon>
-      <span matListItemTitle>{{item.label}}</span>
+  <div class="list-group list-group-flush">
+    <a *ngFor="let item of menuItems" 
+       [routerLink]="item.path" 
+       routerLinkActive="active" 
+       class="list-group-item list-group-item-action border-0">
+      <i class="bi {{ item.icon }} me-2"></i>
+      <span>{{ item.label }}</span>
     </a>
-  </mat-nav-list>
+  </div>
 </div>

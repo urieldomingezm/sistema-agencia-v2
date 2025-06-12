@@ -1,44 +1,77 @@
-<mat-card appearance="outlined" class="welcome-card mat-elevation-z2"
-  style="background: linear-gradient(to right, #1a237e, #283593)">
-  <mat-card-header style="color: white">
-    <mat-card-title>
-      <h1>Bienvenido al Sistema de Gestión de Agencia</h1>
-    </mat-card-title>
-  </mat-card-header>
-  <mat-card-content style="color: #e3f2fd">
-    <p>Selecciona una opción del menú lateral para comenzar</p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-raised-button color="accent">Comenzar</button>
-  </mat-card-actions>
-</mat-card>
+<div class="container py-5">
+  <div class="text-center mb-5">
+    <i class="bi bi-house-door display-4 mb-3 text-primary"></i>
+    <h1 class="display-4 mb-3">¡Bienvenido!</h1>
+    <p class="lead">
+      Gracias por usar nuestro sistema. Explora nuestras funcionalidades:
+    </p>
+  </div>
 
-<div class="dashboard-grid">
-  <mat-card appearance="outlined" class="dashboard-card mat-elevation-z3"
-    style="background: linear-gradient(45deg, #3949ab, #5c6bc0)">
-    <mat-card-header style="color: white">
-      <mat-icon mat-card-avatar style="color: #e8eaf6">people</mat-icon>
-      <mat-card-title>Clientes</mat-card-title>
-    </mat-card-header>
-    <mat-card-content style="color: #e3f2fd">
-      <p>Gestiona la información de tus clientes</p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-raised-button color="accent" [routerLink]="['/clientes']">VER CLIENTES</button>
-    </mat-card-actions>
-  </mat-card>
+  <div class="row g-4 mb-5">
+    <div class="col-md-4 text-center">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <i class="bi bi-file-text display-6 text-primary mb-3"></i>
+          <h3 class="h5">Gestión de Documentos</h3>
+          <p class="card-text">Administra todos tus documentos de manera eficiente</p>
+          <a href="#" class="btn btn-primary">Ir a Documentos</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-4 text-center">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <i class="bi bi-people display-6 text-primary mb-3"></i>
+          <h3 class="h5">Usuarios</h3>
+          <p class="card-text">Gestiona los usuarios y sus permisos en el sistema</p>
+          <a href="#" class="btn btn-primary">Gestionar Usuarios</a>
+        </div>
+      </div>
+    </div>
 
-  <mat-card appearance="outlined" class="dashboard-card mat-elevation-z3"
-    style="background: linear-gradient(45deg, #1976d2, #42a5f5)">
-    <mat-card-header style="color: white">
-      <mat-icon mat-card-avatar style="color: #e3f2fd">business_center</mat-icon>
-      <mat-card-title>Servicios</mat-card-title>
-    </mat-card-header>
-    <mat-card-content style="color: #e3f2fd">
-      <p>Administra los servicios ofrecidos</p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-raised-button color="accent" [routerLink]="['/servicios']">VER SERVICIOS</button>
-    </mat-card-actions>
-  </mat-card>
+    <div class="col-md-4 text-center">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <i class="bi bi-bar-chart display-6 text-primary mb-3"></i>
+          <h3 class="h5">Reportes</h3>
+          <p class="card-text">Genera y visualiza reportes estadísticos</p>
+          <a href="#" class="btn btn-primary">Ver Reportes</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 text-center">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <i class="bi bi-gear display-6 text-primary mb-3"></i>
+          <h3 class="h5">Configuración</h3>
+          <p class="card-text">Personaliza las opciones del sistema</p>
+          <a href="#" class="btn btn-primary">Configurar</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 text-center">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <i class="bi bi-calendar-check display-6 text-primary mb-3"></i>
+          <h3 class="h5">Agenda</h3>
+          <p class="card-text">Administra citas y eventos importantes</p>
+          <a href="#" class="btn btn-primary">Ver Agenda</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 text-center">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <i class="bi bi-chat-dots display-6 text-primary mb-3"></i>
+          <h3 class="h5">Mensajes</h3>
+          <p class="card-text">Comunícate con otros usuarios del sistema</p>
+          <a href="#" class="btn btn-primary">Ir a Mensajes</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

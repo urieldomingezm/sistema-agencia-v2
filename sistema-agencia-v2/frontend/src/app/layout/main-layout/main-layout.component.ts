@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { MatSidenavModule } from '@angular/material/sidenav';
 import { HeaderComponent } from '../header/header.component';
-import { SidebarComponent } from '../sidebar/sidebar.component';
 import { FooterComponent } from '../footer/footer.component';
 
 @Component({
@@ -12,18 +10,12 @@ import { FooterComponent } from '../footer/footer.component';
   imports: [
     CommonModule,
     RouterOutlet,
-    MatSidenavModule,
     HeaderComponent,
-    SidebarComponent,
     FooterComponent
   ],
   templateUrl: './main-layout.component.html',
   styleUrls: ['./main-layout.component.scss']
 })
 export class MainLayoutComponent {
-  sidenavOpened = true;
-  
-  toggleSidenav() {
-    this.sidenavOpened = !this.sidenavOpened;
-  }
+  // Ya no necesitamos las propiedades del sidenav
 }

@@ -1,17 +1,11 @@
-<div class="app-container mat-typography">
-  <app-header (menuToggle)="toggleSidenav()"></app-header>
+<div class="d-flex flex-column min-vh-100">
+  <app-header></app-header>
   
-  <mat-sidenav-container>
-    <mat-sidenav #sidenav [mode]="'side'" [opened]="sidenavOpened" class="mat-elevation-z2">
-      <app-sidebar></app-sidebar>
-    </mat-sidenav>
-    
-    <mat-sidenav-content>
-      <div class="content-wrapper">
-        <router-outlet></router-outlet>
-      </div>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
+  <div class="flex-grow-1">
+    <div class="container-fluid p-4">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
   
   <app-footer></app-footer>
 </div>

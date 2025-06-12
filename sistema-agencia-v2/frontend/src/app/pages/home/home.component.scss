@@ -1,8 +1,168 @@
+// Variables de colores (paleta azul estilo Pepsi)
+$pepsi-blue-dark: #0033a0;  // Azul Pepsi principal
+$pepsi-blue-medium: #0066cc; // Azul medio
+$pepsi-blue-light: #0099ff;  // Azul claro
+$pepsi-blue-pale: #e3f2fd;   // Azul muy claro
+$pepsi-accent: #e60023;      // Rojo acento (para elementos destacados)
+$text-dark: #333333;         // Texto oscuro
+$text-medium: #555555;       // Texto medio
+$text-light: #666666;        // Texto claro
+
+// Importar el módulo de color de Sass
+@use "sass:color";
+
+// Contenedor principal
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+// Tarjeta de bienvenida
 .welcome-card {
+  max-width: 500px;
+  padding: 24px;
   margin-bottom: 24px;
   text-align: center;
 }
 
+// Encabezado de la tarjeta
+mat-card-header {
+  justify-content: center;
+}
+
+.header-icon {
+  font-size: 48px;
+  height: 48px;
+  width: 48px;
+  color: $pepsi-blue-dark;
+  margin-bottom: 16px;
+}
+
+.welcome-title {
+  margin: 0;
+  text-align: center;
+  color: $pepsi-blue-dark;
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+// Contenido de la tarjeta
+.card-content {
+  padding: 24px 0;
+}
+
+.divider {
+  border: 0;
+  border-top: 1px solid rgba(0,0,0,0.12);
+  margin: 0;
+}
+
+.features-container {
+  padding: 24px 0;
+  text-align: center;
+}
+
+.features-text {
+  font-size: 1.2em;
+  color: $text-medium;
+  margin-bottom: 24px;
+}
+
+// Tarjetas de características
+.feature-card {
+  width: 90%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  mat-icon {
+    margin-bottom: 8px;
+    font-size: 28px;
+    height: 28px;
+    width: 28px;
+  }
+  
+  p {
+    margin: 0;
+    font-weight: 500;
+  }
+}
+
+.feature-docs {
+  background: $pepsi-blue-pale;
+}
+
+.feature-users {
+  background: color.adjust($pepsi-blue-dark, $lightness: 60%);
+}
+
+.feature-reports {
+  background: color.adjust($pepsi-blue-medium, $lightness: 45%);
+}
+
+.feature-settings {
+  background: color.adjust($pepsi-blue-light, $lightness: 30%);
+}
+
+// Acciones de la tarjeta
+.card-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding-top: 16px;
+}
+
+.action-button {
+  padding: 8px 24px;
+  
+  &:hover {
+    transform: translateY(-2px);
+    transition: transform 0.2s ease;
+  }
+}
+
+// Pie de la tarjeta
+.card-footer {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.progress-bar {
+  height: 4px;
+  background: #e0e0e0;
+}
+
+.progress-bar-value {
+  width: 100%;
+  height: 100%;
+  background: $pepsi-blue-dark;
+  animation: indeterminate 1s infinite linear;
+}
+
+.version-text {
+  margin-top: 8px;
+  color: $text-light;
+  font-size: 0.9em;
+}
+
+// Animación para la barra de progreso
+@keyframes indeterminate {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+// Estilos para el dashboard grid
 .dashboard-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
