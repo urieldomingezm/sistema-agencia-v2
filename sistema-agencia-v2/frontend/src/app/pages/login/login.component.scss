@@ -1,0 +1,32 @@
+// Variables de colores (usando la paleta azul de Pepsi que ya tienes)
+$pepsi-blue-dark: #0033a0;  // Azul Pepsi principal
+
+.card {
+  border-radius: 10px;
+  overflow: hidden;
+  border: none;
+}
+
+.card-header {
+  background-color: $pepsi-blue-dark;
+}
+
+.btn-primary {
+  background-color: $pepsi-blue-dark;
+  border-color: $pepsi-blue-dark;
+  
+  &:hover, &:focus {
+    background-color: darken($pepsi-blue-dark, 10%);
+    border-color: darken($pepsi-blue-dark, 10%);
+  }
+}
+
+.form-control:focus {
+  border-color: $pepsi-blue-dark;
+  box-shadow: 0 0 0 0.25rem rgba(0, 51, 160, 0.25);
+}
+
+.form-check-input:checked {
+  background-color: $pepsi-blue-dark;
+  border-color: $pepsi-blue-dark;
+}

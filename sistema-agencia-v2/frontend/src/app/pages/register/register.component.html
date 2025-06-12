@@ -1,0 +1,66 @@
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <div class="card shadow">
+        <div class="card-header bg-primary text-white text-center py-3">
+          <h4 class="mb-0">Crear cuenta</h4>
+        </div>
+        <div class="card-body p-4">
+          <div class="text-center mb-4">
+            <i class="bi bi-person-plus-fill display-4 text-primary"></i>
+          </div>
+          
+          <form>
+            <div class="row mb-3">
+              <div class="col-md-6 mb-3 mb-md-0">
+                <label for="firstName" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="firstName" placeholder="Tu nombre" required>
+              </div>
+              <div class="col-md-6">
+                <label for="lastName" class="form-label">Apellido</label>
+                <input type="text" class="form-control" id="lastName" placeholder="Tu apellido" required>
+              </div>
+            </div>
+            
+            <div class="mb-3">
+              <label for="email" class="form-label">Correo electrónico</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                <input type="email" class="form-control" id="email" placeholder="correo@ejemplo.com" required>
+              </div>
+            </div>
+            
+            <div class="mb-3">
+              <label for="password" class="form-label">Contraseña</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                <input type="password" class="form-control" id="password" placeholder="Contraseña" required>
+              </div>
+              <div class="form-text">La contraseña debe tener al menos 8 caracteres, incluyendo letras y números.</div>
+            </div>
+            
+            <div class="mb-3">
+              <label for="confirmPassword" class="form-label">Confirmar contraseña</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirmar contraseña" required>
+              </div>
+            </div>
+            
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="termsCheck" required>
+              <label class="form-check-label" for="termsCheck">Acepto los <a href="#" class="text-decoration-none">términos y condiciones</a></label>
+            </div>
+            
+            <div class="d-grid gap-2">
+              <button type="submit" class="btn btn-primary">Registrarse</button>
+            </div>
+          </form>
+        </div>
+        <div class="card-footer text-center py-3">
+          <p class="mb-0">¿Ya tienes una cuenta? <a routerLink="/login" class="text-decoration-none">Iniciar sesión</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

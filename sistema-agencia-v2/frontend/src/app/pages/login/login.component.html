@@ -1,0 +1,50 @@
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-5">
+      <div class="card shadow">
+        <div class="card-header bg-primary text-white text-center py-3">
+          <h4 class="mb-0">Iniciar sesión</h4>
+        </div>
+        <div class="card-body p-4">
+          <div class="text-center mb-4">
+            <i class="bi bi-person-circle display-4 text-primary"></i>
+          </div>
+          
+          <form>
+            <div class="mb-3">
+              <label for="email" class="form-label">Correo electrónico</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                <input type="email" class="form-control" id="email" placeholder="correo@ejemplo.com" required>
+              </div>
+            </div>
+            
+            <div class="mb-3">
+              <label for="password" class="form-label">Contraseña</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                <input type="password" class="form-control" id="password" placeholder="Contraseña" required>
+              </div>
+            </div>
+            
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="rememberMe">
+              <label class="form-check-label" for="rememberMe">Recordarme</label>
+            </div>
+            
+            <div class="d-grid gap-2">
+              <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+            </div>
+          </form>
+          
+          <div class="text-center mt-3">
+            <a href="#" class="text-decoration-none">¿Olvidaste tu contraseña?</a>
+          </div>
+        </div>
+        <div class="card-footer text-center py-3">
+          <p class="mb-0">¿No tienes una cuenta? <a routerLink="/registre" class="text-decoration-none">Regístrate</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

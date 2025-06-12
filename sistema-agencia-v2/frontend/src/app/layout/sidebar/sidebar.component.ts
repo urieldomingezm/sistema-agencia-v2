@@ -16,10 +16,9 @@ export class SidebarComponent {
   @Input() opened = true;
   
   menuItems = [
-    { path: '/', icon: 'bi-house', label: 'Inicio' },
-    { path: '/clientes', icon: 'bi-people', label: 'Clientes' },
-    { path: '/servicios', icon: 'bi-briefcase', label: 'Servicios' },
-    { path: '/reportes', icon: 'bi-bar-chart', label: 'Reportes' },
-    { path: '/configuracion', icon: 'bi-gear', label: 'Configuración' }
+    { path: '/', icon: 'bi-house-door-fill', label: 'Inicio' },
+    { path: '/informacion', icon: 'bi-info-circle-fill', label: 'Informacion' },
+    { path: '/login', icon: 'bi-person-circle', label: 'Iniciar sesión' }, 
+    { path: '/registre', icon: 'bi-person-plus-fill', label: 'Registrarse' }
   ];
 }
