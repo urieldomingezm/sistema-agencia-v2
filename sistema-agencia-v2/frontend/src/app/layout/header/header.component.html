@@ -1,3 +1,91 @@
+<!-- Offcanvas Menu -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+  <div class="offcanvas-header" style="background-color: #0033a0; color: white;">
+    <h5 class="offcanvas-title" id="offcanvasMenuLabel">Menú de Navegación</h5>
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body p-0">
+    <div class="accordion accordion-flush" id="menuAccordion">
+      <!-- Nivel 1: Categorías principales -->
+      <div *ngFor="let category of menuItems; let i = index" class="accordion-item">
+        <h2 class="accordion-header" [id]="'heading' + i">
+          <button 
+            class="accordion-button collapsed" 
+            type="button" 
+            data-bs-toggle="collapse" 
+            [attr.data-bs-target]="'#collapse' + i" 
+            [attr.aria-expanded]="false" 
+            [attr.aria-controls]="'collapse' + i">
+            <i class="bi {{ category.icon }} me-2"></i>
+            {{ category.label }}
+          </button>
+        </h2>
+        <div 
+          [id]="'collapse' + i" 
+          class="accordion-collapse collapse" 
+          [attr.aria-labelledby]="'heading' + i" 
+          data-bs-parent="#menuAccordion">
+          <div class="accordion-body p-0">
+            
+            <!-- Nivel 2: Subcategorías -->
+            <div *ngFor="let subcategory of category.children; let j = index">
+              
+              <!-- Si tiene path directo (sin hijos) -->
+              <a *ngIf="subcategory.path && !subcategory.children" 
+                 [routerLink]="subcategory.path" 
+                 routerLinkActive="active"
+                 class="list-group-item list-group-item-action border-0 ps-4"
+                 data-bs-dismiss="offcanvas">
+                <i class="bi {{ subcategory.icon }} me-2"></i>
+                {{ subcategory.label }}
+              </a>
+              
+              <!-- Si tiene hijos (nivel 3) -->
+              <div *ngIf="subcategory.children" class="accordion accordion-flush" [id]="'subAccordion' + i + '_' + j">
+                <div class="accordion-item">
+                  <h3 class="accordion-header" [id]="'subheading' + i + '_' + j">
+                    <button 
+                      class="accordion-button collapsed ps-4" 
+                      type="button" 
+                      data-bs-toggle="collapse" 
+                      [attr.data-bs-target]="'#subcollapse' + i + '_' + j" 
+                      [attr.aria-expanded]="false" 
+                      [attr.aria-controls]="'subcollapse' + i + '_' + j">
+                      <i class="bi {{ subcategory.icon }} me-2"></i>
+                      {{ subcategory.label }}
+                    </button>
+                  </h3>
+                  <div 
+                    [id]="'subcollapse' + i + '_' + j" 
+                    class="accordion-collapse collapse" 
+                    [attr.aria-labelledby]="'subheading' + i + '_' + j" 
+                    [attr.data-bs-parent]="'#subAccordion' + i + '_' + j">
+                    <div class="accordion-body p-0">
+                      
+                      <!-- Nivel 3: Elementos específicos -->
+                      <a *ngFor="let item of subcategory.children" 
+                         [routerLink]="item.path" 
+                         routerLinkActive="active"
+                         class="list-group-item list-group-item-action border-0 ps-5"
+                         data-bs-dismiss="offcanvas">
+                        <i class="bi {{ item.icon }} me-2"></i>
+                        {{ item.label }}
+                      </a>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <nav class="navbar navbar-expand-lg navbar-dark shadow" style="background-color: #0033a0;">
   <div class="container-fluid">
     <button class="btn btn-outline-light me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
@@ -22,22 +110,3 @@
   </div>
 </nav>
 
-<!-- Offcanvas Menu -->
-<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
-  <div class="offcanvas-header" style="background-color: #0033a0; color: white;">
-    <h5 class="offcanvas-title" id="offcanvasMenuLabel">Menú</h5>
-    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body p-0">
-    <div class="list-group list-group-flush">
-      <a *ngFor="let item of menuItems" 
-         [routerLink]="item.path" 
-         routerLinkActive="active" 
-         class="list-group-item list-group-item-action border-0"
-         data-bs-dismiss="offcanvas">
-        <i class="bi {{ item.icon }} me-2"></i>
-        <span>{{ item.label }}</span>
-      </a>
-    </div>
-  </div>
-</div>
