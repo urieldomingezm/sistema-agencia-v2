@@ -1,0 +1,17 @@
+<div class="app-container mat-typography">
+  <app-header (menuToggle)="toggleSidenav()"></app-header>
+  
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav [mode]="'side'" [opened]="sidenavOpened" class="mat-elevation-z2">
+      <app-sidebar></app-sidebar>
+    </mat-sidenav>
+    
+    <mat-sidenav-content>
+      <div class="content-wrapper">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  
+  <app-footer></app-footer>
+</div>

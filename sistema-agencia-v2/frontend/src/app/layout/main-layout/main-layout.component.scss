@@ -1,0 +1,27 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+mat-sidenav-container {
+  flex: 1;
+  margin-top: 64px; // Altura del toolbar
+}
+
+mat-sidenav {
+  width: 250px;
+}
+
+.content-wrapper {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+// Ajuste para pantallas pequeñas
+@media (max-width: 599px) {
+  mat-sidenav-container {
+    margin-top: 56px; // Altura del toolbar en móviles
+  }
+}
