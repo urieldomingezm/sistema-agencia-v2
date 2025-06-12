@@ -13,14 +13,11 @@ def create_app(config_name=None):
     app = Flask(__name__)
     app.config.from_object(config[config_name])
     
-    # Inicializar extensiones
     CORS(app)
     db = init_db(app)
     
-    # Registrar rutas
     register_routes(app)
     
-    # Ruta de salud
     @app.route('/health')
     def health_check():
         return jsonify({'status': 'OK', 'message': 'API funcionando correctamente'})
