@@ -8,7 +8,7 @@ class Config:
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
         'postgresql://postgres:habbo1234@postgres:5432/agencia_habbo'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    SQLALCHEMY_ECHO = True  # Para debug, cambiar a False en producción
+    SQLALCHEMY_ECHO = True 
 
 class DevelopmentConfig(Config):
     DEBUG = True
