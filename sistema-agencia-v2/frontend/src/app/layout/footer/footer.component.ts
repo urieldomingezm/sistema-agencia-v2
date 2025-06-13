@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -12,4 +12,18 @@ import { CommonModule } from '@angular/common';
 })
 export class FooterComponent {
   currentYear = new Date().getFullYear();
+  showScrollButton = false;
+  
+  @HostListener('window:scroll')
+  onWindowScroll() {
+    // Mostrar el botón cuando el usuario ha desplazado más de 300px
+    this.showScrollButton = window.scrollY > 300;
+  }
+  
+  scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
 }

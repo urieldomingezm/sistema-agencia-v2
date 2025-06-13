@@ -1,3 +1,9 @@
 <footer class="mt-auto py-3 text-center text-white shadow" style="background-color: #0033a0;">
   <span>&copy; {{ currentYear }} Agencia Pepsi. Todos los derechos reservados.</span>
+  <button *ngIf="showScrollButton" 
+          (click)="scrollToTop()" 
+          class="scroll-top-btn"
+          title="Volver arriba">
+    <i class="bi bi-arrow-up text-white"></i>
+  </button>
 </footer>

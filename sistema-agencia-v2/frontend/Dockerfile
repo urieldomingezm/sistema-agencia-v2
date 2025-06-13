@@ -5,6 +5,7 @@ COPY package*.json ./
 RUN npm install
 
 RUN npm install bootstrap@5.3.2 @popperjs/core --save
+RUN npm install sweetalert2 just-validate chart.js --save
 COPY . .
 RUN npm run build -- --configuration production
 
