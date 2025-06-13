@@ -13,6 +13,6 @@ class AuthService:
     def authenticate_user(self, username, password):
         """Autenticar usuario"""
         user = self.user_service.get_user_by_username(username)
-        if user and user.check_password(password) and user.activo:
+        if user and user.check_password(password):
             return user
         return None

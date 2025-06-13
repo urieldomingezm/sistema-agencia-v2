@@ -18,7 +18,7 @@ def login():
         
         user = RegistroUsuarios.query.filter_by(usuario_registro=usuario).first()
         
-        if user and user.check_password(password) and user.activo:
+        if user and user.check_password(password):
             # Aquí puedes agregar JWT tokens más adelante
             return jsonify({
                 'message': 'Login exitoso',

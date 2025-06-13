@@ -8,7 +8,6 @@ class UserService:
         """Crear un nuevo usuario"""
         user = RegistroUsuarios(
             usuario_registro=data['usuario_registro'],
-            rol_id=data.get('rol_id', 1),
             ip_registro=ip_address,
             nombre_habbo=data.get('nombre_habbo'),
             codigo_time=data.get('codigo_time')
@@ -25,8 +24,6 @@ class UserService:
             user.nombre_habbo = data['nombre_habbo']
         if 'codigo_time' in data:
             user.codigo_time = data['codigo_time']
-        if 'rol_id' in data:
-            user.rol_id = data['rol_id']
         
         db.session.commit()
         return user

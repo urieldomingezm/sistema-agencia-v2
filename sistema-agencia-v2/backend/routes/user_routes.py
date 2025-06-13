@@ -70,10 +70,10 @@ def update_user(user_id):
 
 @user_bp.route('/<int:user_id>', methods=['DELETE'])
 def delete_user(user_id):
-    """Eliminar un usuario (soft delete)"""
+    """Eliminar un usuario (hard delete)"""
     try:
         user = RegistroUsuarios.query.get_or_404(user_id)
-        user.activo = False
+        db.session.delete(user)
         db.session.commit()
         
         return jsonify({'message': 'Usuario eliminado correctamente'})
