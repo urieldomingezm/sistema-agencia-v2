@@ -1,4 +1,6 @@
-.app-toolbar {
+@use 'sass:color';
+
+.header {
   position: fixed;
   top: 0;
   left: 0;
@@ -98,7 +100,7 @@ $pepsi-blue-light: #e3f2fd;
   padding-left: 3rem;
   
   &:hover {
-    background-color: lighten($pepsi-blue-light, 5%);
+    background-color: color.adjust($pepsi-blue-light, $lightness: 5%);
   }
 }
 

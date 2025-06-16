@@ -1,4 +1,5 @@
-// Variables de colores (usando la paleta azul de Pepsi que ya tienes)
+@use 'sass:color';
+
 $pepsi-blue-dark: #0033a0;  // Azul Pepsi principal
 
 .card {
@@ -16,8 +17,8 @@ $pepsi-blue-dark: #0033a0;  // Azul Pepsi principal
   border-color: $pepsi-blue-dark;
   
   &:hover, &:focus {
-    background-color: darken($pepsi-blue-dark, 10%);
-    border-color: darken($pepsi-blue-dark, 10%);
+    background-color: color.adjust($pepsi-blue-dark, $lightness: -10%);
+    border-color: color.adjust($pepsi-blue-dark, $lightness: -10%);
   }
 }
 
